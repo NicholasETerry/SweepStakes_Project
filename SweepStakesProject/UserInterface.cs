@@ -28,7 +28,9 @@ namespace SweepStakesProject
             }
             else
             {
-                return ErrorMessage();
+
+                ErrorMessage(" Not a valid first name");
+                return "";
             }
         }
         public static string CustomerLastName()
@@ -43,7 +45,8 @@ namespace SweepStakesProject
             }
             else
             {
-                return ErrorMessage();
+                ErrorMessage("Not a valid last name");
+                return "";
             }
         }
         public static string CustomerEmailAddress()
@@ -58,7 +61,8 @@ namespace SweepStakesProject
             }
             else
             {
-                return ErrorMessage();
+                ErrorMessage("Invalid email address");
+                return "";
             }
         }
         private static bool Confirm(string toConfirm)
@@ -69,11 +73,49 @@ namespace SweepStakesProject
         {
 
         }
-        private static string ErrorMessage()
+        private static void ErrorMessage(string errorMessage)
         {
-            string errorOne = "Invalid name";
-            return errorOne;
+            Console.WriteLine(errorMessage);
+            Console.ReadLine();
+        }
+        public static ISweepstakesManager GetManager()
+        {
+            Console.WriteLine("Please select which collection method to use.\n\n");
+            Console.WriteLine(" press 1 for Queue\n" +
+                " press 2 for Stack\n\n" +
+                " press 3 for more information on the Queue and Stack collections methods");
+            return ConfirmGetManagerInput(Convert.ToInt32(Console.ReadLine()));
+        }
+        public static ISweepstakesManager ConfirmGetManagerInput(int userInput)
+        {
+            ISweepstakesManager newManager;
+            switch (userInput)
+            {
+                case 1:
+                    Console.Clear();
+                    newManager = new SweepstakesQueueManager();
+                    break;
+                case 2:
+                    Console.Clear();
+                    newManager = new SweepstakesStackManager();
+                    break;
+                case 3:
+                    Console.Clear();
+                    MoreInfo();
+                    newManager = null;
+                    break;
+                default:
+                    ErrorMessage("Not a valid answer");
+                    newManager = null;
+                    GetManager();
+                    break;
+            }
+            return newManager;
 
+        }
+        public static void MoreInfo()
+        {
+            // more info about Queue and Stack
         }
     }
 }

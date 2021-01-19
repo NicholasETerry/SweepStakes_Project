@@ -13,21 +13,18 @@ namespace SweepStakesProject
         // create a Markertingfirm class with functionality to create a sweepstakes
         // i want to implement dependency injection in my MarkertingFirm class so that i can utilize a sweepstakes manager
         // PROPERTIES (GET : SET)
-        public ISweepstakesManager _Manager
-        {
-            get => _manager;
-            set => _manager = value;
-        }
+
         // CONSTRUCTOR
-        public MarketingFirm( ISweepstakesManager manager)
+        public MarketingFirm( ISweepstakesManager manager) // Constructor Injection -  - - either queue or stack
         {
-            _Manager = manager;
+            
+            _manager = manager;
         }
 
         // METHODS ( CAN DO )
         public void CreateSweepstake()
         {
-
+            Sweepstakes newSweepStakes = new Sweepstakes(); // needs a string for sweepstakes name
         }
     }
 }

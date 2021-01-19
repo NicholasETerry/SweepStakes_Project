@@ -10,6 +10,7 @@ namespace SweepStakesProject
     {
         static void Main(string[] args)
         {
+            Simulation newSimulation = new Simulation();
         }
     }
 }

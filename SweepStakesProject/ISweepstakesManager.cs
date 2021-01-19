@@ -11,13 +11,8 @@ namespace SweepStakesProject
 
         // write an isweepstakes manager interface with the following methods for a sweepstakes management system.
 
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
-        {
+        void InsertSweepstakes(Sweepstakes sweepstakes);
 
-        }
-        public Sweepstakes GetSweepstakes()
-        {
-
-        }
+        public Sweepstakes GetSweepstakes();
     }
 }
