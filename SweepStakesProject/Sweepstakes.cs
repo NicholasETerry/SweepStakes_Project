@@ -11,6 +11,7 @@ namespace SweepStakesProject
         //MEMBER VARIABLES ( HAVE A )
         private string name;
         private Dictionary<int, Contestants> contestants;
+        private int keyValue;
         // Create a sweepstakes class that uses the Dictionary data structure as an underlying structure. The sweepstakes class will have the
         // following methods with full implementation( write the functionality ) of each method.
         // ---------
@@ -27,15 +28,21 @@ namespace SweepStakesProject
         public Sweepstakes(string name)
         {
             Name = name;
+            contestants = new Dictionary<int, Contestants>();
+            keyValue = 0;
         }
         // METHODS(CAN DO)
         public void RegisterContestant(Contestants contestant)
         {
-
+            contestants.Add(keyValue, contestant); // adds contestant to contestants dictionary
+            keyValue++;                            // Increment the dictionary key by one each time a contestant is added
         }
         public Contestants PickWinner()
         {
 
+            Random newRandom = new Random();
+            int pickWinner = newRandom.Next(0, contestants.Count - 1);
+            return contestants[pickWinner];
         }
         public void PrintContestantInfo(Contestants contestant)
         {

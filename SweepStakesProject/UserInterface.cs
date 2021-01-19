@@ -18,21 +18,48 @@ namespace SweepStakesProject
         // METHODS ( CAN DO )
         public static string CustomerFirstName()
         {
+            bool isConfirmed;
             Console.WriteLine("Enter Contestant's First Name:");
             string firstName =Console.ReadLine();
-            Confirm(firstName);
+            isConfirmed = Confirm(firstName);
+            if (isConfirmed.Equals(true))
+            {
+                return firstName;
+            }
+            else
+            {
+                return ErrorMessage();
+            }
         }
         public static string CustomerLastName()
         {
+            bool isConfirmed;
             Console.WriteLine("Enter Contestant's Last Name:");
             string lastName = Console.ReadLine();
-            Confirm(lastName);
+            isConfirmed = Confirm(lastName);
+            if (isConfirmed.Equals(true))
+            {
+                return lastName;
+            }
+            else
+            {
+                return ErrorMessage();
+            }
         }
         public static string CustomerEmailAddress()
         {
+            bool isConfirmed;
             Console.WriteLine("Enter Contestant's Email Address:");
             string email = Console.ReadLine();
-            ConfirmEmail(email);
+            isConfirmed = ConfirmEmail(email);
+            if (isConfirmed.Equals(true))
+            {
+                return email;
+            }
+            else
+            {
+                return ErrorMessage();
+            }
         }
         private static bool Confirm(string toConfirm)
         {
@@ -40,6 +67,12 @@ namespace SweepStakesProject
         }
         private static bool ConfirmEmail(string EmailToConfirm)
         {
+
+        }
+        private static string ErrorMessage()
+        {
+            string errorOne = "Invalid name";
+            return errorOne;
 
         }
     }
