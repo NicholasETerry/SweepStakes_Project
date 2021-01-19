@@ -8,6 +8,10 @@ namespace SweepStakesProject
 {
     class Simulation
     {
+        public Simulation()
+        {
+            CreateMarketingFirmWithManager();
+        }
         public void CreateMarketingFirmWithManager()
         {
             MarketingFirm newFirm = new MarketingFirm(UserInterface.GetManager()); // gets stack or queue manager

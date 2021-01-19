@@ -36,6 +36,7 @@ namespace SweepStakesProject
         {
             contestants.Add(keyValue, contestant); // adds contestant to contestants dictionary
             keyValue++;                            // Increment the dictionary key by one each time a contestant is added
+            contestant.RegistrationNumber = keyValue;
         }
         public Contestants PickWinner()
         {

@@ -25,13 +25,8 @@ namespace SweepStakesProject
             FirstName = UserInterface.CustomerFirstName();
             LastName = UserInterface.CustomerLastName();
             EmailAddress = UserInterface.CustomerEmailAddress();
-            RegistrationNumber = GenerateRegistrationNumber();
         }
 
         // METHODS ( HAVE A )
-        public int GenerateRegistrationNumber()
-        {
-
-        }
     }
 }

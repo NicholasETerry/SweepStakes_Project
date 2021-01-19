@@ -115,7 +115,7 @@ namespace SweepStakesProject
         public static void MoreInfo()
         {
             Console.WriteLine("The Stack Class represents a simple last-in-first-out (LIFO) non-generic collection of objects.\n");
-            Console.WriteLine("The Queue Class represents a first-in, first-out collection of objects.");
+            Console.WriteLine("The Queue Class represents a first-in, first-out collection of objects.\n");
         }
         public static string GetSeepstakesName()
         {

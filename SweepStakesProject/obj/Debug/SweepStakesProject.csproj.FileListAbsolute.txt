@@ -1,0 +1,7 @@
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\bin\Debug\SweepStakesProject.exe.config
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\bin\Debug\SweepStakesProject.exe
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\bin\Debug\SweepStakesProject.pdb
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\obj\Debug\SweepStakesProject.csprojAssemblyReference.cache
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\obj\Debug\SweepStakesProject.csproj.CoreCompileInputs.cache
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\obj\Debug\SweepStakesProject.exe
+C:\Users\Nicholas\Desktop\DevCode\Thulium\SweepStakesProject\SweepStakesProject\obj\Debug\SweepStakesProject.pdb

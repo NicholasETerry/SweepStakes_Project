@@ -18,6 +18,7 @@ namespace SweepStakesProject
         public MarketingFirm( ISweepstakesManager manager) // Constructor Injection -  - - either queue or stack
         {           
             _manager = manager;
+            CreateSweepstake();
         }
 
         // METHODS ( CAN DO )
