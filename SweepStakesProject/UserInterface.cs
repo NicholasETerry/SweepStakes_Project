@@ -19,21 +19,20 @@ namespace SweepStakesProject
         public static string CustomerFirstName()
         {
             Console.WriteLine("Enter Contestant's First Name:");
-            Confirm(Console.ReadLine());
+            string firstName =Console.ReadLine();
+            Confirm(firstName);
         }
         public static string CustomerLastName()
         {
             Console.WriteLine("Enter Contestant's Last Name:");
-            Confirm(Console.ReadLine());
+            string lastName = Console.ReadLine();
+            Confirm(lastName);
         }
         public static string CustomerEmailAddress()
         {
             Console.WriteLine("Enter Contestant's Email Address:");
-            ConfirmEmail(Console.ReadLine());
-        }
-        public static int RegistrationNumber()
-        {
-
+            string email = Console.ReadLine();
+            ConfirmEmail(email);
         }
         private static bool Confirm(string toConfirm)
         {

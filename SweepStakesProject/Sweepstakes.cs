@@ -39,7 +39,11 @@ namespace SweepStakesProject
         }
         public void PrintContestantInfo(Contestants contestant)
         {
-
+            Console.WriteLine(contestant.FirstName);
+            Console.WriteLine(contestant.LastName);
+            Console.WriteLine(contestant.EmailAddress);
+            Console.WriteLine(contestant.RegistrationNumber);
+            Console.ReadLine();
         }
     }
 }
