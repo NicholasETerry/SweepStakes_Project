@@ -16,15 +16,14 @@ namespace SweepStakesProject
 
         // CONSTRUCTOR
         public MarketingFirm( ISweepstakesManager manager) // Constructor Injection -  - - either queue or stack
-        {
-            
+        {           
             _manager = manager;
         }
 
         // METHODS ( CAN DO )
         public void CreateSweepstake()
         {
-            Sweepstakes newSweepStakes = new Sweepstakes(); // needs a string for sweepstakes name
+            Sweepstakes newSweepStakes = new Sweepstakes(UserInterface.GetSeepstakesName());
         }
     }
 }

@@ -12,16 +12,15 @@ namespace SweepStakesProject
         public SweepstakesQueueManager()
         {
             queue = new Queue<Sweepstakes>();
-            
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            queue.Enqueue(sweepstakes);
         }
         public Sweepstakes GetSweepstakes()
         {
-            throw new NotImplementedException();
+            return queue.Dequeue();
         }
         //MEMBER VARIABLES ( HAVE A )
         // create a sweepstakes queue manager class that uses the queue data structure as an underlying structure

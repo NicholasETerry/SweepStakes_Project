@@ -41,7 +41,7 @@ namespace SweepStakesProject
         {
 
             Random newRandom = new Random();
-            int pickWinner = newRandom.Next(0, contestants.Count - 1);
+            int pickWinner = newRandom.Next(0, contestants.Count);
             return contestants[pickWinner];
         }
         public void PrintContestantInfo(Contestants contestant)

@@ -21,7 +21,7 @@ namespace SweepStakesProject
         }
         public Sweepstakes GetSweepstakes()
         {
-            stack.
+            return stack.Pop();
         }
 
         // MEMBER VARIABLES ( HAVE A )

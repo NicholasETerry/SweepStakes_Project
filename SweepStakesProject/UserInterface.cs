@@ -28,7 +28,6 @@ namespace SweepStakesProject
             }
             else
             {
-
                 ErrorMessage(" Not a valid first name");
                 return "";
             }
@@ -67,11 +66,11 @@ namespace SweepStakesProject
         }
         private static bool Confirm(string toConfirm)
         {
-
+            return true; // need to complete
         }
         private static bool ConfirmEmail(string EmailToConfirm)
         {
-
+            return true; // need to complete
         }
         private static void ErrorMessage(string errorMessage)
         {
@@ -115,7 +114,13 @@ namespace SweepStakesProject
         }
         public static void MoreInfo()
         {
-            // more info about Queue and Stack
+            Console.WriteLine("The Stack Class represents a simple last-in-first-out (LIFO) non-generic collection of objects.\n");
+            Console.WriteLine("The Queue Class represents a first-in, first-out collection of objects.");
+        }
+        public static string GetSeepstakesName()
+        {
+            Console.WriteLine("Enter name for the Sweepstakes.");
+            return (Console.ReadLine());
         }
     }
 }
