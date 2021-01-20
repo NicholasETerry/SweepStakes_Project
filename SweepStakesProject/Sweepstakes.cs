@@ -30,6 +30,8 @@ namespace SweepStakesProject
             Name = name;
             contestants = new Dictionary<int, Contestants>();
             keyValue = 0;
+            RegisterContestant(UserInterface.RegisterContestants());
+            UserInterface.SweepstakesNextTask();
         }
         // METHODS(CAN DO)
         public void RegisterContestant(Contestants contestant)

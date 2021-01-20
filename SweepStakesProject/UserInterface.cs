@@ -16,7 +16,26 @@ namespace SweepStakesProject
         // CONSTRUCTOR
 
         // METHODS ( CAN DO )
-        public static void ContestantFirstName()
+        public static void SweepstakesNextTask()
+        {
+            // 1 register contestent  2 pick a winner  3 print contestent info
+            Console.WriteLine("Please select what you would like to do next.\n\n");
+            Console.WriteLine(" press 1 : to resister another contestent.\n" +
+                " press 2 : to pick a sweepstakes winner.\n" +
+                " press 3 : to print a contestent's information.\n" +
+                "press 4 : Exit application\n");
+            ConfirmSweepstakesNextTask(Convert.ToInt32(Console.ReadLine()));
+        }
+        public static void ConfirmSweepstakesNextTask(int selectedTask)
+        {
+
+        }
+        public static Contestants RegisterContestants()
+        {
+            Contestants newContestant = new Contestants();
+            return newContestant;
+        }
+        public static string ContestantFirstName()
         {
             bool isConfirmed;
             Console.WriteLine("Enter Contestant's First Name:");
@@ -27,9 +46,10 @@ namespace SweepStakesProject
                 ErrorMessage(" Not a valid first name");
                 ContestantFirstName();
             }
+            return firstName;
 
         }
-        public static void ContestantLastName()
+        public static string ContestantLastName()
         {
             bool isConfirmed;
             Console.WriteLine("Enter Contestant's Last Name:");
@@ -40,8 +60,9 @@ namespace SweepStakesProject
                 ErrorMessage("Not a valid last name");
                 ContestantLastName();
             }
+            return lastName;
         }
-        public static void ContestantEmailAddress()
+        public static string ContestantEmailAddress()
         {
             bool isConfirmed;
             Console.WriteLine("Enter Contestant's Email Address:");
@@ -52,6 +73,7 @@ namespace SweepStakesProject
                 ErrorMessage("Invalid email address");
                 ContestantEmailAddress();
             }
+            return email;
         }
         private static bool Confirm(string toConfirm)
         {
