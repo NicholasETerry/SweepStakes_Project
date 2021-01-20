@@ -1,1 +1,36 @@
-﻿
+﻿        public static ISweepstakesManager GetManager()  ********// method injection
+        {
+            Console.WriteLine("Please select which collection method to use.\n\n");
+            Console.WriteLine(" press 1 for Queue\n" +
+                " press 2 for Stack\n" +
+                " press 3 for more information on the Queue and Stack collections methods");
+            return ConfirmGetManagerInput(Convert.ToInt32(Console.ReadLine()));
+        }
+                public static ISweepstakesManager ConfirmGetManagerInput(int userInput)  *******// method injection
+        {
+            ISweepstakesManager newManager;
+            switch (userInput)
+            {
+                case 1:
+                    Console.Clear();
+                    newManager = new SweepstakesQueueManager();
+                    break;
+                case 2:
+                    Console.Clear();
+                    newManager = new SweepstakesStackManager();
+                    break;
+                case 3:
+                    Console.Clear();
+                    MoreInfo();
+                    newManager = null;
+                    GetManager();
+                    break;
+                default:
+                    ErrorMessage("Not a valid answer");
+                    newManager = null;
+                    GetManager();
+                    break;
+            }
+            return newManager;
+
+        }

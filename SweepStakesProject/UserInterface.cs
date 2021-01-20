@@ -6,29 +6,26 @@ using System.Threading.Tasks;
 
 namespace SweepStakesProject
 {
-    static class UserInterface // made static !
+    static class UserInterface
     {
-        //MEMBER VARIABLES ( HAVE A )
-        // Create a user interface for any information the application would need to get from the user. One example would be the functionality
-        // to assign a Contestant object a first name, last name, email address, and registration number
-        // PROPERTIES(GET:SET)
-
-        // CONSTRUCTOR
-
-        // METHODS ( CAN DO )
-        public static void SweepstakesNextTask()
+        public static void Winner()
         {
-            // 1 register contestent  2 pick a winner  3 print contestent info
+            Console.WriteLine("The Winner Is:\n");
+        }
+        public static int GetContestantInfo()
+        {
+            Console.WriteLine("Enter key to get info on contestant");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        public static int SweepstakesNextTask()
+        {
             Console.WriteLine("Please select what you would like to do next.\n\n");
             Console.WriteLine(" press 1 : to resister another contestent.\n" +
                 " press 2 : to pick a sweepstakes winner.\n" +
                 " press 3 : to print a contestent's information.\n" +
                 "press 4 : Exit application\n");
-            ConfirmSweepstakesNextTask(Convert.ToInt32(Console.ReadLine()));
-        }
-        public static void ConfirmSweepstakesNextTask(int selectedTask)
-        {
-
+            
+            return Convert.ToInt32(Console.ReadLine());
         }
         public static Contestants RegisterContestants()
         {
@@ -47,7 +44,6 @@ namespace SweepStakesProject
                 ContestantFirstName();
             }
             return firstName;
-
         }
         public static string ContestantLastName()
         {
@@ -77,18 +73,18 @@ namespace SweepStakesProject
         }
         private static bool Confirm(string toConfirm)
         {
-            return true; // need to complete
+            return true; // not complete
         }
         private static bool ConfirmEmail(string EmailToConfirm)
         {
-            return true; // need to complete
+            return true; // not complete
         }
-        private static void ErrorMessage(string errorMessage)
+        public static void ErrorMessage(string errorMessage)
         {
             Console.WriteLine(errorMessage);
             Console.ReadLine();
         }
-        public static ISweepstakesManager GetManager()
+        public static ISweepstakesManager GetManager() // method injection
         {
             Console.WriteLine("Please select which collection method to use.\n\n");
             Console.WriteLine(" press 1 for Queue\n" +
@@ -96,7 +92,7 @@ namespace SweepStakesProject
                 " press 3 for more information on the Queue and Stack collections methods");
             return ConfirmGetManagerInput(Convert.ToInt32(Console.ReadLine()));
         }
-        public static ISweepstakesManager ConfirmGetManagerInput(int userInput)
+        public static ISweepstakesManager ConfirmGetManagerInput(int userInput) // method injection
         {
             ISweepstakesManager newManager;
             switch (userInput)
@@ -122,7 +118,6 @@ namespace SweepStakesProject
                     break;
             }
             return newManager;
-
         }
         public static void MoreInfo()
         {

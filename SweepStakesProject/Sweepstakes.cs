@@ -8,17 +8,10 @@ namespace SweepStakesProject
 {
     class Sweepstakes
     {
-        //MEMBER VARIABLES ( HAVE A )
         private string name;
         private Dictionary<int, Contestants> contestants;
         private int keyValue;
-        // Create a sweepstakes class that uses the Dictionary data structure as an underlying structure. The sweepstakes class will have the
-        // following methods with full implementation( write the functionality ) of each method.
-        // ---------
-        // As a developer, I want to use the factory design pattern to allow a user to choose between a SweepstakesStackManager or 
-        // a SweepstakesQueueManager to manage the sweepstakes objects.
 
-        //PROPERTIES (GET : SET)
         public string Name
         {
             get => name;
@@ -31,29 +24,68 @@ namespace SweepStakesProject
             contestants = new Dictionary<int, Contestants>();
             keyValue = 0;
             RegisterContestant(UserInterface.RegisterContestants());
-            UserInterface.SweepstakesNextTask();
         }
-        // METHODS(CAN DO)
+
         public void RegisterContestant(Contestants contestant)
         {
-            contestants.Add(keyValue, contestant); // adds contestant to contestants dictionary
-            keyValue++;                            // Increment the dictionary key by one each time a contestant is added
+            contestants.Add(keyValue, contestant);
+            keyValue++;                            
             contestant.RegistrationNumber = keyValue;
+            ConfirmSweepstakesNextTask(UserInterface.SweepstakesNextTask());
         }
         public Contestants PickWinner()
         {
-
             Random newRandom = new Random();
             int pickWinner = newRandom.Next(0, contestants.Count);
+            UserInterface.Winner();
+            PrintContestantInfo(contestants[pickWinner]);
             return contestants[pickWinner];
         }
         public void PrintContestantInfo(Contestants contestant)
         {
-            Console.WriteLine(contestant.FirstName);
-            Console.WriteLine(contestant.LastName);
-            Console.WriteLine(contestant.EmailAddress);
-            Console.WriteLine(contestant.RegistrationNumber);
+            Console.WriteLine("First name: "+ contestant.FirstName);
+            Console.WriteLine("Last name: "+ contestant.LastName);
+            Console.WriteLine("Email Address: " + contestant.EmailAddress);
+            Console.WriteLine("Registration Number: " + contestant.RegistrationNumber);
             Console.ReadLine();
+            ConfirmSweepstakesNextTask(UserInterface.SweepstakesNextTask());
+        }
+        public void ConfirmSweepstakesNextTask(int selectedTask)
+        {
+            switch (selectedTask)
+            {
+                case 1:
+                    Console.Clear();
+                    RegisterContestant(UserInterface.RegisterContestants());
+                    break;
+                case 2:
+                    Console.Clear();
+                    PickWinner();
+                    break;
+                case 3:
+                    Console.Clear();
+                    PrintContestantInfo(GetInfo(UserInterface.GetContestantInfo()));
+                    break;
+                default:
+                    break;
+            }
+        }
+        public Contestants GetInfo(int keyValue)
+        {
+            bool isValue = false;
+            while (isValue.Equals(false))
+            {
+                if(keyValue > contestants.Count - 1 )
+                {
+                    UserInterface.ErrorMessage("Invalid entry. There are " + contestants.Count.ToString() + " values availible.\n" +
+                        "Enter key value again please.");
+                }
+                else
+                {
+                    isValue = true;
+                }
+            }
+            return contestants[keyValue];
         }
     }
 }
