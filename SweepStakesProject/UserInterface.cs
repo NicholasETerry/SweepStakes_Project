@@ -84,7 +84,7 @@ namespace SweepStakesProject
             Console.WriteLine(errorMessage);
             Console.ReadLine();
         }
-        public static ISweepstakesManager GetManager() // method injection
+        public static ISweepstakesManager GetManager() // method injection - allows me to pass one data type that both manager classes share
         {
             Console.WriteLine("Please select which collection method to use.\n\n");
             Console.WriteLine(" press 1 for Queue\n" +
@@ -92,8 +92,8 @@ namespace SweepStakesProject
                 " press 3 for more information on the Queue and Stack collections methods");
             return ConfirmGetManagerInput(Convert.ToInt32(Console.ReadLine()));
         }
-        public static ISweepstakesManager ConfirmGetManagerInput(int userInput) // method injection
-        {
+        public static ISweepstakesManager ConfirmGetManagerInput(int userInput) // method injection - allows me to pass one data type that 
+        {                                                                       // both manager classes share
             ISweepstakesManager newManager;
             switch (userInput)
             {
@@ -124,7 +124,7 @@ namespace SweepStakesProject
             Console.WriteLine("The Stack Class represents a simple last-in-first-out (LIFO) non-generic collection of objects.\n");
             Console.WriteLine("The Queue Class represents a first-in, first-out collection of objects.\n");
         }
-        public static string GetSeepstakesName()
+        public static string GetSweepstakesName()
         {
             Console.WriteLine("Enter name for the Sweepstakes.");
             return (Console.ReadLine());

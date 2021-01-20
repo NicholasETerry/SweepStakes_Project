@@ -18,7 +18,7 @@ namespace SweepStakesProject
 
         public void CreateSweepstake()
         {
-            Sweepstakes newSweepStakes = new Sweepstakes(UserInterface.GetSeepstakesName());
+            Sweepstakes newSweepStakes = new Sweepstakes(UserInterface.GetSweepstakesName());
         }
     }
 }
