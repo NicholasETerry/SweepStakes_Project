@@ -16,52 +16,41 @@ namespace SweepStakesProject
         // CONSTRUCTOR
 
         // METHODS ( CAN DO )
-        public static string CustomerFirstName()
+        public static void ContestantFirstName()
         {
             bool isConfirmed;
             Console.WriteLine("Enter Contestant's First Name:");
             string firstName =Console.ReadLine();
             isConfirmed = Confirm(firstName);
-            if (isConfirmed.Equals(true))
-            {
-                return firstName;
-            }
-            else
+            if (isConfirmed.Equals(false))
             {
                 ErrorMessage(" Not a valid first name");
-                return "";
+                ContestantFirstName();
             }
+
         }
-        public static string CustomerLastName()
+        public static void ContestantLastName()
         {
             bool isConfirmed;
             Console.WriteLine("Enter Contestant's Last Name:");
             string lastName = Console.ReadLine();
             isConfirmed = Confirm(lastName);
-            if (isConfirmed.Equals(true))
-            {
-                return lastName;
-            }
-            else
+            if (isConfirmed.Equals(false))
             {
                 ErrorMessage("Not a valid last name");
-                return "";
+                ContestantLastName();
             }
         }
-        public static string CustomerEmailAddress()
+        public static void ContestantEmailAddress()
         {
             bool isConfirmed;
             Console.WriteLine("Enter Contestant's Email Address:");
             string email = Console.ReadLine();
             isConfirmed = ConfirmEmail(email);
-            if (isConfirmed.Equals(true))
-            {
-                return email;
-            }
-            else
+            if (isConfirmed.Equals(false))
             {
                 ErrorMessage("Invalid email address");
-                return "";
+                ContestantEmailAddress();
             }
         }
         private static bool Confirm(string toConfirm)
@@ -81,7 +70,7 @@ namespace SweepStakesProject
         {
             Console.WriteLine("Please select which collection method to use.\n\n");
             Console.WriteLine(" press 1 for Queue\n" +
-                " press 2 for Stack\n\n" +
+                " press 2 for Stack\n" +
                 " press 3 for more information on the Queue and Stack collections methods");
             return ConfirmGetManagerInput(Convert.ToInt32(Console.ReadLine()));
         }
@@ -102,6 +91,7 @@ namespace SweepStakesProject
                     Console.Clear();
                     MoreInfo();
                     newManager = null;
+                    GetManager();
                     break;
                 default:
                     ErrorMessage("Not a valid answer");

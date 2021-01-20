@@ -8,9 +8,6 @@ namespace SweepStakesProject
 {
     interface ISweepstakesManager
     {
-
-        // write an isweepstakes manager interface with the following methods for a sweepstakes management system.
-
         void InsertSweepstakes(Sweepstakes sweepstakes);
 
         public Sweepstakes GetSweepstakes();
